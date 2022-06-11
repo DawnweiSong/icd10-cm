@@ -124,7 +124,7 @@ def find(s: str) -> Optional[ICD10]:
 
 def in_chapter(block: str, icd10: str) -> bool:
     snum=icd10[1:3].lstrip('0') #deal with R000, i.e., all 0 case, Xiaowei, 20220611
-    if len(snum)=0: snum='0'
+    if len(snum)==0: snum='0'
     alpha, numeric = ord(icd10[0]), int(snum)
     sblock, eblock = block.split('-')  # A00-B99
     salpha, snumeric = ord(sblock[0]), int(sblock[1:].lstrip('0') or 0)
